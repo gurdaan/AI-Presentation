@@ -428,6 +428,28 @@ const departmentTools = [
     ]
   },
   {
+    department: "Training Team",
+    icon: Megaphone, // Assuming 'Megaphone' is a generic icon for communication/education; you might want to replace this with a more specific icon if available (e.g., 'GraduationCap', 'Book')
+    tasks: [
+      {
+        name: "Content Creation & Curation",
+        tools: [
+          { name: "AI-Powered Course & Lesson Generators", description: "Generates course outlines, lesson content, and interactive exercises from product documentation or prompts.", examples: [{ name: "Coursebox", url: "https://www.coursebox.ai/" }, { name: "SC Training (formerly EdApp)", url: "https://www.sctraining.com/" }, { name: "Easygenerator (AI features)", url: "https://www.easygenerator.com/" }] },
+          { name: "AI Video Creation for Training", description: "Creates training videos with AI avatars, automated narration, and dynamic visuals.", examples: [{ name: "HeyGen", url: "https://www.heygen.com/" }, { name: "Synthesys AI Studio", url: "https://synthesys.io/" }, { name: "Descript (AI features)", url: "https://www.descript.com/" }] },
+          { name: "AI Content Summarization & Translation", description: "Summarizes lengthy product manuals into digestible training content and translates materials for global clients.", examples: [{ name: "ChatGPT/Gemini (for summarization)", url: "https://chat.openai.com/" }, { name: "DeepL (AI translation)", url: "https://www.deepl.com/" }, { name: "Traductor (AI translation within platforms)", url: "https://www.traductor.com/" }] }
+        ]
+      },
+      {
+        name: "Training Delivery & Engagement",
+        tools: [
+          { name: "AI-Powered Learning Management Systems (LMS)", description: "Provides personalized learning paths, intelligent content recommendations, and automated assessments for clients.", examples: [{ name: "Absorb LMS (AI features)", url: "https://absorblms.com/" }, { name: "Docebo (AI-powered learning suite)", url: "https://www.docebo.com/" }, { name: "360Learning (AI-driven upskilling)", url: "https://360learning.com/" }] },
+          { name: "Conversational AI for Support & Q&A", description: "Offers 24/7 instant answers to client product questions and guides them through features or troubleshooting.", examples: [{ name: "Intercom (AI chatbots)", url: "https://www.intercom.com/" }, { name: "Zendesk (AI-powered answer bot)", url: "https://www.zendesk.com/" }, { name: "Drift (AI for sales and support)", url: "https://www.drift.com/" }] },
+          { name: "AI for Performance Tracking & Feedback", description: "Analyzes client progress, identifies knowledge gaps, and provides personalized feedback on training modules.", examples: [{ name: "Skilljar (AI insights)", url: "https://www.skilljar.com/" }, { name: "TalentLMS (Reporting & analytics)", url: "https://talentlms.com/" }, { name: "WorkRamp (Reporting features)", url: "https://www.workramp.com/" }] }
+        ]
+      }
+    ]
+  },
+  {
     department: "Cloud & Infrastructure Team",
     icon: Cloud,
     tasks: [
@@ -457,7 +479,7 @@ const departmentTools = [
         name: "Test Case & Data Generation",
         tools: [
           { name: "AI Test Case Generators", description: "Generates basic test scenarios and test cases for various functionalities.", examples: [{ name: "Testsigma (AI features)", url: "https://testsigma.com/" }, { name: "Tricentis Testim (AI-powered)", url: "https://www.tricentis.com/products/automate-continuous-testing/testim/" }] },
-          { name: "AI Test Data Management", description: "Hels generate diverse edge cases and specific test data based on examples.", examples: [{ name: "GenRocket (AI-driven)", url: "https://genrocket.com/" }, { name: "Mostly AI", url: "https://mostly.ai/" }] },
+          { name: "AI Test Data Management", description: "Helps generate diverse edge cases and specific test data based on examples.", examples: [{ name: "GenRocket (AI-driven)", url: "https://genrocket.com/" }, { name: "Mostly AI", url: "https://mostly.ai/" }] },
           { name: "AI for Automated Scripting", description: "Assists in creating automated test scripts (e.g., Selenium, Playwright).", examples: [{ name: "Applitools (AI-powered visual testing)", url: "https://applitools.com/" }, { name: "Cypress (with AI plugins)", url: "https://www.cypress.io/" }] }
         ]
       },
@@ -587,7 +609,7 @@ const App = () => {
   } else if (activeTab === 'models') {
     currentData = models;
     currentCategories = [...new Set(currentData.map(item => item.category))];
-    currentTitle = 'Types of AI Models Available Today';
+    currentTitle = 'Spectrum of AI Models';
     currentModalTitlePrefix = 'AI Model: ';
   } else if (activeTab === 'departments') {
     currentData = departmentTools; // This data is structured differently
@@ -728,7 +750,7 @@ const App = () => {
             }`}
             onClick={() => setSelectedItem(null) || setActiveTab('models')} // Close modal if open, then set tab
           >
-            AI Models And Tools
+            Models/Frameworks
           </button>
           <button
             className={`px-4 sm:px-6 py-3 text-sm sm:text-lg font-semibold rounded-t-lg transition-colors duration-300 ${
@@ -753,20 +775,55 @@ const App = () => {
         </div>
 
         {/* Home Tab Content */}
-        {activeTab === 'home' && (
-          <div className="text-center py-12 px-4 sm:px-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
-              Welcome to the AI Empowerment Session!
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              **Prompt Engineering** is the crucial skill for effectively communicating with AI. It's about crafting precise instructions to unlock the full potential of AI models, transforming them into powerful assistants for your daily tasks.
-            </p>
-            <p className="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
-              **Why is it important to learn today?** The rapid evolution of AI means mastering prompt engineering is no longer optional. It's essential for boosting efficiency, enhancing output quality, and driving innovation across all teams in our organization.
-            </p>
-            
+       {activeTab === 'home' && (
+        <div className="text-center py-12 px-4 sm:px-8 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
+            Basics Of Prompt Engineering And How To Use AI To Boost Productivity
+          </h1>
+          {/* New Image Section */}
+          <div className="mt-10 mb-8 flex justify-center">
+            <img
+              // If your image is in the `public` folder, you can reference it directly
+              // from the root of your public folder.
+              // Example: public/images/ai-pyramid.png -> src="/images/ai-pyramid.png"
+              // If your image is at public/Screenshot 2025-06-11 at 10.32.02 AM.png
+              src="/Productivity.png"
+              alt="AI Productivity Pyramid" // Always provide descriptive alt text for accessibility
+              className="max-w-full h-auto rounded-lg shadow-xl" // Responsive image styling
+              style={{ maxHeight: '500px' }} // Optional: Limit max height
+              onError={(e) => {
+                // Fallback for image loading errors
+                e.target.src = 'https://placehold.co/600x400/CCCCCC/000000?text=Image+Not+Found';
+                console.error("Image failed to load:", e.target.src);
+              }}
+            />
           </div>
-        )}
+
+
+           <h2 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-6">
+            Examples of AI Tools and Techniques
+          </h2>
+          {/* New Image Section */}
+          <div className="mt-10 mb-8 flex justify-center">
+            <img
+              // If your image is in the `public` folder, you can reference it directly
+              // from the root of your public folder.
+              // Example: public/images/ai-pyramid.png -> src="/images/ai-pyramid.png"
+              // If your image is at public/Screenshot 2025-06-11 at 10.32.02 AM.png
+              src="/Examples.png"
+              alt="AI Productivity Pyramid" // Always provide descriptive alt text for accessibility
+              className="max-w-full h-auto rounded-lg shadow-xl" // Responsive image styling
+              style={{ maxHeight: '500px' }} // Optional: Limit max height
+              onError={(e) => {
+                // Fallback for image loading errors
+                e.target.src = 'https://placehold.co/600x400/CCCCCC/000000?text=Image+Not+Found';
+                console.error("Image failed to load:", e.target.src);
+              }}
+            />
+          </div>
+        </div>
+    )}
+
 
         {/* Prompting Techniques & AI Models Tabs Content */}
         {activeTab === 'techniques' || activeTab === 'models' ? (
