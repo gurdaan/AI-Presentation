@@ -787,7 +787,7 @@ const App = () => {
               // from the root of your public folder.
               // Example: public/images/ai-pyramid.png -> src="/images/ai-pyramid.png"
               // If your image is at public/Screenshot 2025-06-11 at 10.32.02 AM.png
-              src="/Productivity.png"
+              src="Productivity.png"
               alt="AI Productivity Pyramid" // Always provide descriptive alt text for accessibility
               className="max-w-full h-auto rounded-lg shadow-xl" // Responsive image styling
               style={{ maxHeight: '500px' }} // Optional: Limit max height
@@ -810,7 +810,7 @@ const App = () => {
               // from the root of your public folder.
               // Example: public/images/ai-pyramid.png -> src="/images/ai-pyramid.png"
               // If your image is at public/Screenshot 2025-06-11 at 10.32.02 AM.png
-              src="/Examples.png"
+              src="Examples.png"
               alt="AI Productivity Pyramid" // Always provide descriptive alt text for accessibility
               className="max-w-full h-auto rounded-lg shadow-xl" // Responsive image styling
               style={{ maxHeight: '500px' }} // Optional: Limit max height
